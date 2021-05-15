@@ -7,6 +7,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var ceva :String = "salut frate"
+        loadInitialFragment()
+    }
+    private fun loadInitialFragment(){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.main_fragment, MainFragment());
+        fragmentTransaction.commit()
     }
 }
